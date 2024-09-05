@@ -1,0 +1,25 @@
+.main-banner {
+    padding: 50px 20px;
+    background-color: white;
+    text-align: center;
+}
+
+.main-banner h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.quick-links button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.quick-links button:hover {
+    background-color: #0056b3;
+}
