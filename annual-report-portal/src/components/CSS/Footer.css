@@ -1,0 +1,9 @@
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    position: relative; /* Changed from fixed to relative to prevent overlap */
+    width: 100%;
+    margin-top: 20px;
+}

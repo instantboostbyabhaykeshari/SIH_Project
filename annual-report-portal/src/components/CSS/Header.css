@@ -1,0 +1,100 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #1f4d6c;
+    color: white;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    position: relative;
+    gap: 5px;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    position: relative;
+    gap: 10px;
+}
+
+.user-profile .dropdown-toggle {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.user-profile .dropdown {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+    z-index: 1000;
+}
+
+.user-profile .dropdown.show {
+    display: block;
+}
+
+.user-profile .dropdown ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.user-profile .dropdown ul li {
+    border-bottom: 1px solid #ddd;
+}
+
+.user-profile .dropdown ul li:last-child {
+    border-bottom: none;
+}
+
+.user-profile .dropdown ul li a {
+    padding: 10px 20px;
+    display: block;
+    text-decoration: none;
+    color: #333;
+    background-color: white;
+}
+
+.user-profile .dropdown ul li a:hover {
+    background-color: #f0f0f0;
+}
