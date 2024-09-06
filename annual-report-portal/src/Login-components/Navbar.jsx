@@ -1,44 +1,45 @@
 import React from "react";
 import logo from "../assets/Logo.svg";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { toast } from "react-hot-toast";
 
 const Navbar = (props) => {
   const isLoggedIn = props.isLoggedIn;
   const setIsLoggedIn = props.setIsLoggedIn;
-  return (
-    <div className="flex justify-between items-center w-11/12 max-w-[1160px] py-4 mx-auto">
-      <Link to="/">
-        <img src={logo} height={32} width={160} loading="lazy" />
-      </Link>
+  const location = useLocation();
 
+  return (
+    <div className="flex justify-between items-center w-full py-4 px-8 bg-[#34495e] shadow-lg fixed top-0 left-0 z-50">
       <nav>
-        <ul className="flex gap-x-6 text-richblack-100">
-          <li>
+        <ul className="flex gap-x-10 text-white font-semibold text-lg">
+          <li className="hover:text-[#e67e22] transition-colors duration-300">
             <Link to="/">Home</Link>
           </li>
-          <li>
-            <Link to="/">About</Link>
+          <li className="hover:text-[#e67e22] transition-colors duration-300">
+            <Link to="/about">About</Link>
           </li>
-          <li>
-            <Link to="/">Contact</Link>
+          <li className="hover:text-[#e67e22] transition-colors duration-300">
+            <Link to="/contact">Contact</Link>
+          </li>
+          <li className="hover:text-[#e67e22] transition-colors duration-300">
+            <Link to="/contact">Working</Link>
           </li>
         </ul>
       </nav>
 
-      {/* Button - Login = Signup = Logout = Dashboard  */}
-
-      <div className="flex items-center gap-x-4 text-richblack-100">
-        {!isLoggedIn && (
+      <div className="flex items-center gap-4">
+        {/* Hide login button on login page */}
+        {!isLoggedIn && location.pathname !== "/login" && (
           <Link to="/login">
-            <button className="bg-richblack-800 py-[8px] px-[12px] rounded-[8px] border border-richblack-700">
+            <button className="bg-[#2c3e50] text-white py-2 px-5 rounded-lg hover:bg-[#e67e22] hover:text-black transition-all duration-300 border border-[#2c3e50]">
               Login
             </button>
           </Link>
         )}
-        {!isLoggedIn && (
+        {/* Hide signup button on signup page */}
+        {!isLoggedIn && location.pathname !== "/signup" && (
           <Link to="/signup">
-            <button className="bg-richblack-800 py-[8px] px-[12px] rounded-[8px] border border-richblack-700">
+            <button className="bg-[#2c3e50] text-white py-2 px-5 rounded-lg hover:bg-[#e67e22] hover:text-black transition-all duration-300 border border-[#2c3e50]">
               Sign Up
             </button>
           </Link>
@@ -48,9 +49,9 @@ const Navbar = (props) => {
             <button
               onClick={() => {
                 setIsLoggedIn(false);
-                toast.success("Logout Sucessfully");
+                toast.success("Logout Successfully");
               }}
-              className="bg-richblack-800 py-[8px] px-[12px] rounded-[8px] border border-richblack-700"
+              className="bg-[#e74c3c] text-white py-2 px-5 rounded-lg hover:bg-[#c0392b] transition-all duration-300 border border-[#e74c3c]"
             >
               Log Out
             </button>
@@ -58,7 +59,7 @@ const Navbar = (props) => {
         )}
         {isLoggedIn && (
           <Link to="/dashboard">
-            <button className="bg-richblack-800 py-[8px] px-[12px] rounded-[8px] border border-richblack-700">
+            <button className="bg-[#27ae60] text-white py-2 px-5 rounded-lg hover:bg-[#2ecc71] transition-all duration-300 border border-[#27ae60]">
               Dashboard
             </button>
           </Link>
