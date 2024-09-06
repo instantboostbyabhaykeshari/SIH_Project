@@ -1,0 +1,135 @@
+.main-banner {
+  padding: 50px 20px;
+  background-color: white;
+  text-align: center;
+}
+
+.main-banner h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+.hover-box {
+  color: black;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  width: 70%;
+  height: 60%;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  z-index: 2000;
+  text-align: center;
+  opacity: 0;
+  animation: slideInFromTop 0.3s ease-out forwards;
+  /* animation: slideOutFromTop 0.2s ease-out forwards; */
+}
+
+.hover-box.exit {
+  animation: slideOutToTop 0.2s ease-out forwards;
+}
+
+@keyframes slideInFromTop {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -100%) scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes slideOutToTop {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -100%) scale(0.8);
+  }
+}
+
+
+
+
+.hover-box h2 {
+  margin-bottom: 15px;
+}
+
+.hover-box ul {
+  padding: 0;
+  margin: 0; /* Reset the default margin */
+  list-style: disc inside none; /* Ensure bullet points are visible */
+  text-align: left; /* Align the list text to the left */
+}
+
+.hover-box ul li {
+  margin-bottom: 10px;
+  padding-left: 20px; /* Create space for the bullet points */
+  text-align: left; /* Ensure list items are aligned left */
+}
+
+
+.hover-box input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+
+.checkBox-button {
+  position: absolute;
+  bottom: 20px;
+  left: 15px;
+}
+
+.okButton {
+  position: absolute;
+  bottom: 20px;
+  right: 15px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  backdrop-filter: blur(8px); /* Apply blur effect */
+  z-index: 1000; /* Ensure it's below the hover-box */
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #333;
+}
+
+.close-btn:hover {
+  color: red; /* Optional: hover effect */
+}

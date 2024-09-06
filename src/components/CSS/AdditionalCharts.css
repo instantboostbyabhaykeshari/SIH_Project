@@ -1,0 +1,50 @@
+.additional-charts {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .completion-status, .submission-trends {
+    flex: 1;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.Data-Interpretation, .Student-graph {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+  padding-bottom: 20px;
+}
+
+.pie-chart{
+  flex: 1;
+}
+
+.pieChart-description, .Student-Submission{
+  padding-right: 10%;
+}
+
+
+@media screen and (max-width: 768px) {
+  .Data-Interpretation, .Student-graph {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    text-align: center;
+  }
+
+  .pie-chart, 
+  .pieChart-description, .Student-Submission{
+    max-width: 100%;
+    margin-bottom: 20px;
+    padding-right: 0;
+  }
+}
+
+
+  
